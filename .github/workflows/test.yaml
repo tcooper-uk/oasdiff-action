@@ -51,8 +51,8 @@ jobs:
           id: test_composed
           uses: ./diff
           with:
-            base: 'specs/glob/base/*.yaml'
-            revision: 'specs/glob/revision/*.yaml'
+            base: '"specs/glob/base/*.yaml"'
+            revision: '"specs/glob/revision/*.yaml"'
             format: 'text'
             composed: true
         - name: Test diff action output
@@ -100,8 +100,9 @@ jobs:
           id: test_breaking_composed
           uses: ./breaking
           with:
-            base: 'specs/glob/base/*.yaml'
-            revision: 'specs/glob/revision/*.yaml'
+            base: '"specs/glob/base/*.yaml"'
+            revision: '"specs/glob/revision/*.yaml"'
+            fail-on-diff: false
             format: 'text'
             composed: true
         - name: Test breaking action output
@@ -166,8 +167,8 @@ jobs:
           id: test_changelog_composed
           uses: ./changelog
           with:
-            base: 'specs/glob/base/*.yaml'
-            revision: 'specs/glob/revision/*.yaml'
+            base: '"specs/glob/base/*.yaml"'
+            revision: '"specs/glob/revision/*.yaml"'
             format: 'text'
             composed: true
         - name: Test changelog action output
